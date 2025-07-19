@@ -5,7 +5,16 @@ namespace PluginExample
 {
     public class GameObjectMgr : Akequ.Base.Room
     {
-        static GameObjectMgr instance = new GameObjectMgr();
+        //单例
+        private static GameObjectMgr _instance;
+        public static GameObjectMgr instance { get {
+                if (_instance == null) {
+                    _instance = new GameObjectMgr();
+                    return _instance;
+                }
+                return _instance;
+            }
+        }
 
         public Player[] GetAllPlayer()
         {

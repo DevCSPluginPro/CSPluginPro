@@ -7,7 +7,19 @@ namespace PluginExample
 {
     public class PlayerMgr : Akequ.Base.Room
     {
-        static PlayerMgr instance = new PlayerMgr();
+        private static PlayerMgr _instance;
+        public static PlayerMgr instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PlayerMgr();
+                    return _instance;
+                }
+                return _instance;
+            }
+        }
 
         public bool IsPluginClass(Player player)
         {

@@ -37,7 +37,12 @@ namespace PluginExample
 
         public void DrawImage(bool isLocal = false, string name = "")
         {
-            ResourcesManager.GetSprite(name);
+            Sprite sprite = ResourcesManager.GetSprite(name);
+            if (isLocal)
+            {
+                GameObject gm = CreatImage(new Vector3(0,0),new Vector3(50,50));
+                gm.GetComponent<Image>().sprite = sprite;
+            }
         }
 
 
@@ -90,9 +95,14 @@ namespace PluginExample
 
         }
 
-        static Transform GetPlayerCanvasParent()
+        public Transform GetPlayerCanvasTransform()
         {
-            return GameObject.Find("PlayerCanvas").transform;
+            if (netEvent.isClient)
+            {
+                Transform transform = GameObject.Find("PlayerCanvas").transform;
+                return transform;
+            }
+            return null;
         }
     }
 }

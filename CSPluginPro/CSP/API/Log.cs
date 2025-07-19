@@ -7,7 +7,19 @@ namespace PluginExample
 {
     public class Log : Akequ.Base.Room
     {
-        static Log instance = new Log();
+        private static Log _instance;
+        public static Log instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Log();
+                    return _instance;
+                }
+                return _instance;
+            }
+        }
 
         public void Print(object obj)
         {
