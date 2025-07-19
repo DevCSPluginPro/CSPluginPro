@@ -335,12 +335,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="CSP\PluginLoader.cs" />
+    <Compile Include="CSP\API\GameObjectMgr.cs" />
+    <Compile Include="CSP\API\Log.cs" />
+    <Compile Include="CSP\API\PlayerMgr.cs" />
+    <Compile Include="CSP\Client\AnimationMgr.cs" />
+    <Compile Include="CSP\Client\UIMgr.cs" />
+    <Compile Include="info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CSLib\" />
+    <Folder Include="CSP\Server\" />
     <Folder Include="src\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

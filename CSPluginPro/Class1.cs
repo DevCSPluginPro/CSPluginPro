@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace PluginExample
-{
+{ 
     public class Info : Akequ.Plugins.PluginInfo
     {
         public override string Name => "";
@@ -23,62 +23,50 @@ namespace PluginExample
     {
         public Type Type { get; set; }
         public string Name { get; set; }
-
-        public AdminPanePlugin(Type type, string name)
-        {
-            Type = type;
-            Name = name;
-        }
     }
 
     class RoomPlugin
     {
         public Type Type { get; set; }
         public bool IsNetworked { get; set; }
-
-        public RoomPlugin(Type type, bool IsNetworked)
-        {
-            this.Type = type;
-            this.IsNetworked = IsNetworked;
-        }
     }
 
     class PluginLoader : PluginInitializator
     {
         // 需要生成的角色类
-        private static Type[] units = new Type[]
-        {
-
-
-
-
+        private static Type[] units = new Type[] 
+        { 
+        
+        
+        
+        
         };
 
         // 需要生成的房间或者网络附加类
-        private static RoomPlugin[] rooms = new RoomPlugin[]
-        {
-            new RoomPlugin(typeof(PlayerMgr), true)
-
-
+        private static RoomPlugin[] rooms = new RoomPlugin[] 
+        { 
+        
+        
+        
         };
 
         //需要生成的管理员菜单类
-        private static AdminPanePlugin[] adminPanes = new AdminPanePlugin[]
-        {
-
-
-
-
-
+        private static AdminPanePlugin[] adminPanes = new AdminPanePlugin[] 
+        { 
+        
+        
+        
+        
+        
         };
 
         //需要生成的物品类
-        private static Type[] items = new Type[]
-        {
-
-
-
-
+        private static Type[] items = new Type[] 
+        { 
+        
+        
+        
+        
         };
 
         public override void InitClient()
@@ -142,4 +130,3 @@ namespace PluginExample
         }
     }
 }
-
