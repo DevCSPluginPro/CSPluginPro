@@ -16,14 +16,19 @@ namespace PluginExample
             }
         }
 
-        public Player[] GetAllPlayer()
+        public static Player[] GetAllPlayer()
         {
             return GameObject.FindObjectsOfType<Player>();
         }
 
-        public Rooms[] GetAllRoom()
+        public static Rooms[] GetAllRoom()
         {
             return GameObject.FindObjectsOfType<Rooms>();
+        }
+
+        public static Door[] GetAllDoor()
+        {
+            return GameObject.FindObjectsOfType<Door>();
         }
 
 

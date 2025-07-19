@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +6,7 @@ namespace PluginExample
 {
     public class UIMgr : Akequ.Base.Room
     {
-        public GameObject CreatText(string text2, Vector3 pos, Vector3 size)
+        public static GameObject CreatText(string text2, Vector3 pos, Vector3 size)
         {
             GameObject gameObject = UIManager.SpawnText();
             gameObject.transform.parent = GameObject.Find("PlayerCanvas").transform;
@@ -23,7 +23,7 @@ namespace PluginExample
             return gameObject;
         }
 
-        public GameObject CreatImage(Vector3 pos, Vector3 size)
+        public static GameObject CreatImage(Vector3 pos, Vector3 size)
         {
             GameObject gameObject = UIManager.SpawnImage();
             gameObject.transform.parent = GameObject.Find("PlayerCanvas").transform;
@@ -35,7 +35,7 @@ namespace PluginExample
             return gameObject;
         }
 
-        public void DrawImage(bool isLocal = false, string name = "")
+        public static void DrawImage(bool isLocal = false, string name = "")
         {
             Sprite sprite = ResourcesManager.GetSprite(name);
             if (isLocal)
@@ -55,20 +55,20 @@ namespace PluginExample
             }
         }
 
-        public T CreatComponent<T>(GameObject gameObject) where T : Component
+        public static T CreatComponent<T>(GameObject gameObject) where T : Component
         {
           
-            if (!this.GetComponent<T>(gameObject))
+            if (!GetComponent<T>(gameObject))
             {
                 return gameObject.AddComponent<T>();
             }
             else
             {
-                return this.GetComponent<T>(gameObject);
+                return GetComponent<T>(gameObject);
             }
         }
 
-        public T GetComponent<T>(GameObject gameObject) where T : Component
+        public static T GetComponent<T>(GameObject gameObject) where T : Component
         {
             T component = null;
             if (gameObject.TryGetComponent<T>(out component))
@@ -82,7 +82,7 @@ namespace PluginExample
 
         }
 
-        public T GetComponentInChildren<T>(GameObject gameObject) where T : Component
+        public static T GetComponentInChildren<T>(GameObject gameObject) where T : Component
         {
             if (gameObject.GetComponentInChildren<T>())
             {
@@ -95,7 +95,7 @@ namespace PluginExample
 
         }
 
-        public Transform GetPlayerCanvasTransform()
+static Transform GetPlayerCanvasParent()
         {
             if (netEvent.isClient)
             {

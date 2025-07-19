@@ -340,11 +340,15 @@
     <Compile Include="CSP\API\PlayerMgr.cs" />
     <Compile Include="CSP\Client\AnimationMgr.cs" />
     <Compile Include="CSP\Client\UIMgr.cs" />
+    <Compile Include="CSP\Server\DoorMgr.cs" />
+    <Compile Include="CSP\Server\RoomMgr.cs" />
+    <Compile Include="CSP\Server\SpawnManager.cs" />
     <Compile Include="info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CSP\Server\" />
+<Folder Include="CSP\Server\" />
+    <Folder Include="CSLib\" />
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
