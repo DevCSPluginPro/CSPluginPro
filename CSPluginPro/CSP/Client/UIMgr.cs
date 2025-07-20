@@ -95,14 +95,12 @@ namespace PluginExample
 
         }
 
-static Transform GetPlayerCanvasParent()
+        static Transform GetPlayerCanvasParent()
         {
-            if (netEvent.isClient)
-            {
-                Transform transform = GameObject.Find("PlayerCanvas").transform;
-                return transform;
-            }
-            return null;
+
+            Transform transform = GameObject.Find("PlayerCanvas").transform;
+            return transform;
+
         }
     }
 }

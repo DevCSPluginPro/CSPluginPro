@@ -98,5 +98,10 @@ namespace PluginExample
                 return player.playerClass.GetName();
             }
         }
+
+        public Vector3 GetPos(Player player)
+        {
+            return player.transform.position;
+        }
     }
 }

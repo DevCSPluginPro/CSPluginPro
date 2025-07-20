@@ -339,16 +339,17 @@
     <Compile Include="CSP\API\Log.cs" />
     <Compile Include="CSP\API\PlayerMgr.cs" />
     <Compile Include="CSP\Client\AnimationMgr.cs" />
+    <Compile Include="CSP\Client\ModelMgr.cs" />
+    <Compile Include="CSP\Client\MusicMgr.cs" />
     <Compile Include="CSP\Client\UIMgr.cs" />
     <Compile Include="CSP\Server\DoorMgr.cs" />
+    <Compile Include="CSP\Server\File.cs" />
     <Compile Include="CSP\Server\RoomMgr.cs" />
     <Compile Include="CSP\Server\SpawnManager.cs" />
     <Compile Include="info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-<Folder Include="CSP\Server\" />
-    <Folder Include="CSLib\" />
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
